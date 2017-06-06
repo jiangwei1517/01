@@ -12,6 +12,9 @@
 - (IBAction)move:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *image;
 - (IBAction)size:(id)sender;
+- (IBAction)login;
+@property (weak, nonatomic) IBOutlet UITextField *tvQQ;
+@property (weak, nonatomic) IBOutlet UITextField *tvSecret;
 
 @end
 
@@ -133,5 +136,13 @@
 //    [UIView animateWithDuration:0.5 animations:^{
 //         self.image.frame = frame;
 //    }];
+}
+
+- (IBAction)login {
+    NSString *qq = self.tvQQ.text;
+    NSString *secret = self.tvSecret.text;
+    NSLog(@"帐号%@", qq);
+    NSLog(@"密码%@", secret);
+    [self.view endEditing:YES];
 }
 @end
