@@ -15,6 +15,11 @@
 - (IBAction)login;
 @property (weak, nonatomic) IBOutlet UITextField *tvQQ;
 @property (weak, nonatomic) IBOutlet UITextField *tvSecret;
+- (IBAction)transform:(id)sender;
+- (IBAction)superBg;
+- (IBAction)childBg:(id)sender;
+- (IBAction)resume:(id)sender;
+
 
 @end
 
@@ -144,5 +149,46 @@
     NSLog(@"帐号%@", qq);
     NSLog(@"密码%@", secret);
     [self.view endEditing:YES];
+}
+- (IBAction)transform:(id)sender {
+    switch ([sender tag]) {
+        case 1:{
+            NSLog(@"translate");
+            [UIView animateWithDuration:0.5 animations:^{
+                self.image.transform = CGAffineTransformTranslate(self.image.transform, 0, 20);
+            }];
+            break;
+        }
+        case 2:{
+            NSLog(@"scale");
+            [UIView animateWithDuration:0.5 animations:^{
+                 self.image.transform = CGAffineTransformScale(self.image.transform, 1.5, 1.5);
+            }];
+            break;
+        }
+        case 3:{
+            self.image.transform = CGAffineTransformRotate(self.image.transform, M_PI_4);
+            NSLog(@"rotate");
+            break;
+        }
+            
+        default:
+            break;
+    }
+}
+
+- (IBAction)superBg {
+    [self.tvQQ.superview setBackgroundColor:[UIColor redColor]];
+}
+
+- (IBAction)childBg:(id)sender {
+    for (UIView *childView in self.view.subviews) {
+        [childView setBackgroundColor:[UIColor blueColor]];
+    }
+
+}
+
+- (IBAction)resume:(id)sender {
+    self.image.transform = CGAffineTransformIdentity;
 }
 @end
