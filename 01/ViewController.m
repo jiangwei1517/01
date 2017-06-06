@@ -19,6 +19,7 @@
 - (IBAction)superBg;
 - (IBAction)childBg:(id)sender;
 - (IBAction)resume:(id)sender;
+- (IBAction)removeAllViews:(id)sender;
 
 
 @end
@@ -190,5 +191,11 @@
 
 - (IBAction)resume:(id)sender {
     self.image.transform = CGAffineTransformIdentity;
+}
+
+- (IBAction)removeAllViews:(id)sender {
+    while(self.view.subviews.firstObject){
+        [self.view.subviews.firstObject removeFromSuperview];
+    }
 }
 @end

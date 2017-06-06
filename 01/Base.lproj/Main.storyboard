@@ -159,6 +159,14 @@
                                     <action selector="resume:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EF1-us-82y"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BU8-8g-Yhb">
+                                <rect key="frame" x="274" y="443" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="清除所有view"/>
+                                <connections>
+                                    <action selector="removeAllViews:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ymq-Da-JcG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
